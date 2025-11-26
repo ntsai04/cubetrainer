@@ -29,8 +29,9 @@ class ColorClassifier:
 
     """ Draws a 3x3 grid preview of the classified colors on the given frame. """
     def draw_grid_preview(self, frame, letters, origin=(10, 50), size=25):
+        # 'W' removed from preview map because white is not classified anymore.
         color_map = {
-            'W': (255, 255, 255), 'Y': (0, 255, 255), 'R': (0, 0, 255),
+            'Y': (0, 255, 255), 'R': (0, 0, 255),
             'O': (0, 165, 255), 'B': (255, 0, 0), 'G': (0, 255, 0), '?': (128, 128, 128)
         }
         start_x, start_y = origin
@@ -47,18 +48,27 @@ class ColorClassifier:
     """ Color classification based on HSV values. """
     def _classify_hsv(self, hsv):
         h, s, v = int(hsv[0]), int(hsv[1]), int(hsv[2])
-        if v > 160 and s < 65:
-            return 'W'
-        if v > 130 and s > 60 and 18 <= h <= 38:
+
+        # Yellow: broaden hue and allow lower saturation/value
+        if s > 40 and v > 100 and 15 <= h <= 40:
             return 'Y'
-        if s > 60 and (h <= 15 or h >= 165):
+
+        # Red: cover low and high hue wrap-around, allow medium saturation
+        if s > 40 and v > 80 and (h <= 10 or h >= 170):
             return 'R'
-        if s > 60 and 12 < h < 25:
+
+        # Orange: sits between red and yellow
+        if s > 40 and v > 80 and 8 < h < 20:
             return 'O'
-        if s > 60 and 80 <= h <= 140:
+
+        # Blue: allow slightly lower saturation/value for darker blues
+        if s > 40 and v > 60 and 80 <= h <= 140:
             return 'B'
-        if s > 60 and 32 < h < 88:
+
+        # Green: broaden range and allow lower saturation/value
+        if s > 40 and v > 60 and 32 < h < 88:
             return 'G'
+
         return '?'
 
     """ Normalize corner ordering: [top-left, top-right, bottom-right, bottom-left]. """
