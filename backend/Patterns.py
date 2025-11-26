@@ -6,7 +6,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OLL_PATH = os.path.join(BASE_DIR, "OLLalgos.csv")
 PLL_PATH = os.path.join(BASE_DIR, "PLLalgos.csv")
 
-def load_csv_mapping(path):
+def loadCSVMapping(path):
     """
     Loads a CSV and returns a dictionary:
         mapping_number -> algorithm
@@ -35,13 +35,13 @@ def load_csv_mapping(path):
     return mapping
 
 
-def build_combined_mapping():
+def buildCombinedMapping():
     """
     Reads both OLL and PLL CSVs, merges their mappings,
     and returns a single dictionary for full lookup.
     """
-    oll = load_csv_mapping(OLL_PATH)
-    pll = load_csv_mapping(PLL_PATH)
+    oll = loadCSVMapping(OLL_PATH)
+    pll = loadCSVMapping(PLL_PATH)
 
     combined = {}
     combined.update(oll)

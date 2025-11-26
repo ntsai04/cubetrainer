@@ -5,9 +5,9 @@ import numpy as np
 class ColorClassifier:
     
     """ Sample face colors based on corner coordinates in the frame. """
-    def sample_face_colors(self, frame, corners):
+    def sampleFaceColors(self, frame, corners):
         # Order the corners to get a consistent perspective transform.
-        ordered = self._order_points(corners)
+        ordered = self._orderPoints(corners)
         # Perspective transform the image into a 300x300 square.
         dst = np.array([[0, 0], [299, 0], [299, 299], [0, 299]], dtype=np.float32)
         matrix = cv2.getPerspectiveTransform(ordered.astype(np.float32), dst)
@@ -24,11 +24,11 @@ class ColorClassifier:
 
                 # Convert BGR to HSV (Hue, Saturation, Value) for easier color classification
                 hsv = cv2.cvtColor(np.uint8([[median_bgr]]), cv2.COLOR_BGR2HSV)[0][0]
-                letters.append(self._classify_hsv(hsv))
+                letters.append(self._classifyHSV(hsv))
         return letters
 
     """ Draws a 3x3 grid preview of the classified colors on the given frame. """
-    def draw_grid_preview(self, frame, letters, origin=(10, 50), size=25):
+    def drawGridPreview(self, frame, letters, origin=(10, 50), size=25):
         # 'W' removed from preview map because white is not classified anymore.
         color_map = {
             'Y': (0, 255, 255), 'R': (0, 0, 255),
@@ -46,7 +46,7 @@ class ColorClassifier:
             cv2.putText(frame, letter, (x + 6, y + int(size * 0.72)), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0, 0, 0), 1)
 
     """ Color classification based on HSV values. """
-    def _classify_hsv(self, hsv):
+    def _classifyHSV(self, hsv):
         h, s, v = int(hsv[0]), int(hsv[1]), int(hsv[2])
 
         # Yellow: broaden hue and allow lower saturation/value
@@ -72,7 +72,7 @@ class ColorClassifier:
         return '?'
 
     """ Normalize corner ordering: [top-left, top-right, bottom-right, bottom-left]. """
-    def _order_points(self, pts):
+    def _orderPoints(self, pts):
         rect = np.zeros((4, 2), dtype=np.float32)
         s = pts.sum(axis=1)
         rect[0] = pts[np.argmin(s)] # Top-left

@@ -1,6 +1,6 @@
-from .Patterns import build_combined_mapping
+from .Patterns import buildCombinedMapping
 
-PATTERN_MAP = build_combined_mapping()
+PATTERN_MAP = buildCombinedMapping()
 
 class AlgorithmMatcher():
     """Placeholder function to return a dummy algorithm string."""

@@ -33,7 +33,7 @@ def main():
         display = frame.copy() # Use copy for UI display and keep frame for processing.
 
         # Detect the face and get the corners.
-        corners = detector.detect_face(frame)
+        corners = detector.detectFace(frame)
         if corners is not None:
             # Draw outlines on display UI.
             cv2.polylines(display, [corners], True, (0, 255, 0), 3) # Wrapped corners in green.
@@ -42,8 +42,8 @@ def main():
             cv2.rectangle(display, (x, y), (x + w, y + h), (0, 255, 255), 2)
 
             # Get the face colors and draw the grid preview on the display.
-            letters = classifier.sample_face_colors(frame, corners)
-            classifier.draw_grid_preview(display, letters)
+            letters = classifier.sampleFaceColors(frame, corners)
+            classifier.drawGridPreview(display, letters)
 
         # Build a single list of messages to display so they don't overlap.
         # Start with persistent messages (captured faces), then dynamic ones.
