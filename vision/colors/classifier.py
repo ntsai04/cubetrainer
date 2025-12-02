@@ -32,7 +32,7 @@ class ColorClassifier:
         # 'W' removed from preview map because white is not classified anymore.
         color_map = {
             'Y': (0, 255, 255), 'R': (0, 0, 255),
-            'O': (0, 165, 255), 'B': (255, 0, 0), 'G': (0, 255, 0), '?': (128, 128, 128)
+            'O': (0, 165, 255), 'B': (255, 0, 0), 'G': (0, 255, 0), 'W': (255, 255, 255)
         }
         start_x, start_y = origin
         for i, letter in enumerate(letters):
@@ -69,7 +69,7 @@ class ColorClassifier:
         if s > 40 and v > 60 and 32 < h < 88:
             return 'G'
 
-        return '?'
+        return 'W'
 
     """ Normalize corner ordering: [top-left, top-right, bottom-right, bottom-left]. """
     def _orderPoints(self, pts):

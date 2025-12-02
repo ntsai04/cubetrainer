@@ -10,7 +10,7 @@ def main():
     detector = ShapeDetector(debug=False)
     classifier = ColorClassifier()
 
-    cap = cv2.VideoCapture(1)
+    cap = cv2.VideoCapture(0)
 
     print("Press 'q' to quit.")
     print("Press spacebar to capture the currently detected face colors.")
