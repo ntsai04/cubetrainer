@@ -6,9 +6,7 @@
 
 **Demo Video:** [Cube Trainer Demo](https://youtu.be/JU1_JgLlKKM)
 
-<a href="../cubetrainer.exe.zip" download>
-  Try it out!
-</a>
+[Download Here](../cubetrainer.exe.zip)
 
 ---
 
@@ -445,12 +443,13 @@ In contrast, the online solver enforces a step-by-step capture process, directin
 
 ### Online Resources
 - [OpenCV Documentation](https://docs.opencv.org/)
-- https://jperm.net/ - Rubik's Cube Algorithms
-- https://rubiks-cube-solver.com/scan/ - Rubik's Cube Solver
-- https://programmablebrick.blogspot.com/2017/02/rubiks-cube-tracker-using-opencv.html - Preprocessing example
+- [JPerm](https://jperm.net/) - Rubik's Cube Algorithms
+- [Online Solver](https://rubiks-cube-solver.com/scan/) - Rubik's Cube Solver
+- [Alternative Implementation](https://programmablebrick.blogspot.com/2017/02/rubiks-cube-tracker-using-opencv.html) - Preprocessing example
 
 ## Team
 **Authors:** Nathan Tsai, Yibing Shen
+
 **Course:** CS 566 - Computer Vision | Fall 2025
 
 ---
