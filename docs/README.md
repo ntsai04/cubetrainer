@@ -6,7 +6,9 @@
 
 **Demo Video:** [Cube Trainer Demo](https://youtu.be/JU1_JgLlKKM)
 
-[**Try it out!**](cubetrainer.exe.zip)
+<a href="../cubetrainer.exe.zip" download>
+  Try it out!
+</a>
 
 ---
 
