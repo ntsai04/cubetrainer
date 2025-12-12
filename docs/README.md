@@ -6,8 +6,7 @@
 
 **Demo Video:** [Cube Trainer Demo](https://youtu.be/JU1_JgLlKKM)
 
-[Download Here](https://github.com/ntsai04/cubetrainer/archive/refs/tags/v1.0.zip)
-- See README for instructions
+[Download Here](cubetrainer.zip) - Run run.py to start the program
 
 ---
 
