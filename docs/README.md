@@ -6,7 +6,8 @@
 
 **Demo Video:** [Cube Trainer Demo](https://youtu.be/JU1_JgLlKKM)
 
-[Download Here](cubetrainer.zip)
+[Download Here](https://github.com/ntsai04/cubetrainer/archive/refs/tags/v1.0.zip)
+- See README for instructions
 
 ---
 
