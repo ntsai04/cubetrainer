@@ -337,7 +337,7 @@ Contains 21 permutation patterns. Since orientation is already correct, patterns
 #### 1. **Lighting Sensitivity & Edge Detection**
 **Problem:** Color detection becomes unreliable under strong reflections on cube stickers. For example, reflections from a bright white light bulb can cause yellow stickers to be misclassified as white. In addition, complex background textures—such as wood grain patterns—can interfere with contour extraction, leading to failures in cube edge detection.
 
-![White vs Yellow Confusion](../webpage%20images/whiteyellow.png)
+![White vs Yellow Confusion](webpage%20images/whiteyellow.png)
 
 **Approach:** 
 Although this issue cannot be fully eliminated under uncontrolled lighting, several optimizations were added to improve robustness:
