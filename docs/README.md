@@ -337,7 +337,7 @@ Contains 21 permutation patterns. Since orientation is already correct, patterns
 #### 1. **Lighting Sensitivity & Edge Detection**
 **Problem:** Color detection becomes unreliable under strong reflections on cube stickers. For example, reflections from a bright white light bulb can cause yellow stickers to be misclassified as white. In addition, complex background textures—such as wood grain patterns—can interfere with contour extraction, leading to failures in cube edge detection.
 
-![White vs Yellow Confusion](webpage%20images/whiteyellow.png)
+![White vs Yellow Confusion](../webpage%20images/whiteyellow.png)
 
 **Approach:** 
 Although this issue cannot be fully eliminated under uncontrolled lighting, several optimizations were added to improve robustness:
@@ -357,7 +357,7 @@ Although this issue cannot be fully eliminated under uncontrolled lighting, seve
 - Re-check the database after each rotation attempt
 - Once a match is found, apply the inverse rotation to the output algorithm so the solution aligns with the cube orientation the user is actually holding
 
-![Misoriented Cube Detection](webpage%20images/misoriented.png)
+![Misoriented Cube Detection](../webpage%20images/misoriented.png)
 
 **Result:** The system can now correctly identify the intended OLL/PLL case regardless of input orientation, ensuring consistent and accurate algorithm retrieval without requiring users to manually orient the cube beforehand.
 
@@ -402,8 +402,8 @@ Our program uses HSV-based color classification with median sampling across each
 The online solver relies on manual calibration before sampling from a static image. Its accuracy depends heavily on uniform lighting and often struggles with similar issues such as reflections or low contrast.
 
 #### Example Images
-![Successful Color Detection](webpage%20images/successful.png)
-![Correct Detection](webpage%20images/correct.png)
+![Successful Color Detection](../webpage%20images/successful.png)
+![Correct Detection](../webpage%20images/correct.png)
 
 ### Edge Detection
 Our system relies on contour-based detection to locate the cube face. While this works well on uniform or dark backgrounds, it struggles under complex background textures. For example, wood grain patterns on a tabletop often produce strong edges that get mistaken for cube boundaries, leading to false detections or unstable face tracking.
@@ -411,8 +411,8 @@ Our system relies on contour-based detection to locate the cube face. While this
 The online solver experiences similar limitations. Its detection pipeline also cannot reliably separate cube edges from textured or cluttered backgrounds. To avoid this issue, the online solver requires users to place the cube inside a predefined on-screen box, ensuring the cube is isolated and centered during image capture.
 
 #### Example Images:
-![Wood Table Background Issue](webpage%20images/wood%20table.png)
-![Misoriented Detection](webpage%20images/misoriented.png)
+![Wood Table Background Issue](../webpage%20images/wood%20table.png)
+![Misoriented Detection](../webpage%20images/misoriented.png)
 
 ### User Interface
 Our system allows users to capture cube faces without requiring any specific orientation or order. The program automatically rotates, aligns, and stitches the captured faces internally, enabling a more natural and flexible interaction. Users can focus on simply showing each face to the camera without following strict instructions.
@@ -421,7 +421,7 @@ In contrast, the online solver enforces a step-by-step capture process, directin
 
 #### Example Images
 
-![Confusing User Input Interface](webpage%20images/confusinguserinput.png)
+![Confusing User Input Interface](../webpage%20images/confusinguserinput.png)
 
 ---
 
